@@ -17,4 +17,11 @@ if __name__ == "__main__":
     print(leet_obj.twoSum([2,7,11,15],9))  
     print(leet_obj.twoSum([3,3],6))
     print (" ")
+
+    print ("----------- Roman to Integer solution ----------")
+    print (" ")
+    print(leet_obj.romanToInt("III"))   
+    print(leet_obj.romanToInt("LVIII"))  
+    print(leet_obj.romanToInt("MCMXCIV"))
+    print (" ")
       
