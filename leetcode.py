@@ -49,3 +49,22 @@ class LeetCode:
                 total += current
             prev_value = current
         return total
+    
+    
+#Longest Common Prefix :https://leetcode.com/problems/longest-common-prefix/description/
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""
+        for i in range(len(strs[0])):
+            current_char = strs[0][i]
+
+            for word in strs[1:]:
+                if i < len(word) and word[i] != current_char:
+                    return strs[0][:i]
+        
+        return strs[0]
+

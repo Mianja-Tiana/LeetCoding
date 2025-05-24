@@ -24,4 +24,11 @@ if __name__ == "__main__":
     print(leet_obj.romanToInt("LVIII"))  
     print(leet_obj.romanToInt("MCMXCIV"))
     print (" ")
-      
+    
+
+    print ("----------- Longest Common Prefix solution ----------")
+    print (" ")
+    print(leet_obj.longestCommonPrefix(["flower","flow","flight"]))   
+    print(leet_obj.longestCommonPrefix(["dog","racecar","car"]))  
+    
+    print (" ")
