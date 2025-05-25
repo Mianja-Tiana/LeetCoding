@@ -67,4 +67,26 @@ class LeetCode:
                     return strs[0][:i]
         
         return strs[0]
-
+#Valid Parentheses : https://leetcode.com/problems/valid-parentheses/description/
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        brackets =[]
+        mapping = {')':'(',
+                    '}':'{',
+                    ']':'['
+                    }
+        for char in s:
+            if char in mapping.values():
+                brackets.append(char)
+            elif char in mapping:
+                if not brackets or brackets[-1] != mapping[char]:
+                    return False
+                brackets.pop()
+            else:
+                return False
+        return not brackets
+            
+            

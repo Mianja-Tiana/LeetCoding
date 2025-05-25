@@ -30,5 +30,12 @@ if __name__ == "__main__":
     print (" ")
     print(leet_obj.longestCommonPrefix(["flower","flow","flight"]))   
     print(leet_obj.longestCommonPrefix(["dog","racecar","car"]))  
-    
+    print (" ")
+
+    print ("----------- Valid Parentheses solution ----------")
+    print (" ")
+    print(leet_obj.isValid("()[]{}"))   
+    print(leet_obj.isValid("(]"))
+    print(leet_obj.isValid("()"))
+    print(leet_obj.isValid("([])"))
     print (" ")
