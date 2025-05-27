@@ -1,0 +1,92 @@
+"""
+"""
+class LeetCode:
+
+#Palindrome Number : https://leetcode.com/problems/palindrome-number/description/
+    def isPalindrome(self, x):
+            """
+            :type x: int
+            :rtype: bool
+            """
+            x_str = str(x)
+            return x_str == x_str[::-1]
+    
+# Two Sum Problem :https://leetcode.com/problems/two-sum/
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i , num1 in enumerate (nums):
+            for j ,num2 in enumerate (nums):
+                if i != j and num1 + num2 == target:
+                    return [i, j]
+                
+# Roman to Integer : https://leetcode.com/problems/roman-to-integer/
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        roman = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+}
+
+        total = 0
+        prev_value =0
+        for char in reversed(s):
+            current = roman[char]
+            if current < prev_value:
+                total -= current
+            else :
+                total += current
+            prev_value = current
+        return total
+    
+    
+#Longest Common Prefix :https://leetcode.com/problems/longest-common-prefix/description/
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""
+        for i in range(len(strs[0])):
+            current_char = strs[0][i]
+
+            for word in strs[1:]:
+                if i < len(word) and word[i] != current_char:
+                    return strs[0][:i]
+        
+        return strs[0]
+#Valid Parentheses : https://leetcode.com/problems/valid-parentheses/description/
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        brackets =[]
+        mapping = {')':'(',
+                    '}':'{',
+                    ']':'['
+                    }
+        for char in s:
+            if char in mapping.values():
+                brackets.append(char)
+            elif char in mapping:
+                if not brackets or brackets[-1] != mapping[char]:
+                    return False
+                brackets.pop()
+            else:
+                return False
+        return not brackets
+            
+            
