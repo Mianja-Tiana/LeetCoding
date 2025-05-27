@@ -3,13 +3,22 @@ from leetcode import LeetCode
 if __name__ == "__main__":
     leet_obj = LeetCode()
 
-    print ("----------- Palindrome solution ----------")
+    print ("----------- Palindrome using slicing solution ----------")
 
     print (" ")
-    print(leet_obj.isPalindrome(121))   # True
-    print(leet_obj.isPalindrome(-121))  # False
-    print(leet_obj.isPalindrome(10))  # False
+    print(leet_obj.isPalindrome_slicing(121))   # True
+    print(leet_obj.isPalindrome_slicing(-121))  # False
+    print(leet_obj.isPalindrome_slicing(10))  # False
     print (" ")
+
+    print ("----------- Palindrome without slicing solution ----------")
+
+    print (" ")
+    print(leet_obj.isPalindrome_loop(121))   # True
+    print(leet_obj.isPalindrome_loop(-121))  # False
+    print(leet_obj.isPalindrome_loop(10))  # False
+    print (" ")
+
 
     print ("----------- TwoSum solution ----------")
     print (" ")
@@ -38,4 +47,11 @@ if __name__ == "__main__":
     print(leet_obj.isValid("(]"))
     print(leet_obj.isValid("()"))
     print(leet_obj.isValid("([])"))
+    print (" ")
+
+    print ("----------- Merge Two Sorted Lists solution ----------")
+    print (" ")
+    print(leet_obj.mergeTwoLists([1,2,4],[1,3,4]))  
+    print(leet_obj.mergeTwoLists([],[0]))
+    print(leet_obj.mergeTwoLists([],[]))
     print (" ")
