@@ -55,3 +55,9 @@ if __name__ == "__main__":
     print(leet_obj.mergeTwoLists([],[0]))
     print(leet_obj.mergeTwoLists([],[]))
     print (" ")
+
+    print ("----------- Remove Duplicates from Sorted Array solution ----------")
+    print (" ")
+    print(leet_obj.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))  
+    print(leet_obj.removeDuplicates([1,1,2]))
+    print (" ")

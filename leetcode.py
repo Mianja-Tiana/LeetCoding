@@ -231,5 +231,29 @@ class LeetCode:
         return first.next 
         
 
-            
+# Remove Duplicates from Sorted Array : https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+
+    def removeDuplicates(self, nums):
+        
+        """
+        Removes duplicates in-place from a sorted list of integers so 
+        that each unique element    appears only once.
+        The relative order of the elements is preserved. Returns the number of unique elements(k).
+
+        Args:
+            nums (List[int]): A list of integers sorted in non-decreasing order.
+
+        Returns:
+            int: The number of unique elements (k), 
+            where the first k elements in nums are the unique values.
+        """
+        i = 0
+        while i < len(nums) - 1:
+            if nums[i] == nums[i + 1]:
+                del nums[i + 1]
+            else:
+                i += 1
+        return nums
+
+           
             
