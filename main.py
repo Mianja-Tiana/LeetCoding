@@ -61,3 +61,15 @@ if __name__ == "__main__":
     print(leet_obj.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))  
     print(leet_obj.removeDuplicates([1,1,2]))
     print (" ")
+
+    print ("----------- Remove Element solution ----------")
+    print (" ")
+    print(leet_obj.removeElement([3,2,2,3], 3))  
+    print(leet_obj.removeElement([0,1,2,2,3,0,4,2],2))
+    print (" ")
+
+    print ("----------- . Find the Index of the First Occurrence in a String solution ----------")
+    print (" ")
+    print(leet_obj.strStr("sadbutsad" ,"sad"))  
+    print(leet_obj.strStr("leetcode","leeto"))
+    print (" ")

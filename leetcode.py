@@ -233,7 +233,7 @@ class LeetCode:
 
 # Remove Duplicates from Sorted Array : https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
-    def removeDuplicates(self, nums):
+    def removeDuplicates(self, nums:list[int]) -> list[int]:
         
         """
         Removes duplicates in-place from a sorted list of integers so 
@@ -254,6 +254,51 @@ class LeetCode:
             else:
                 i += 1
         return nums
+    
+#Remove Element : https://leetcode.com/problems/remove-element/description/
+
+    def removeElement(self, nums:list[int], val:int)-> list[int]:
+        """
+            Removes all occurrences of the given value `val` from the list `nums` in-place, 
+            and returns the number of elements that are not equal to `val`.
+
+            Args:
+                nums (List[int]): List of integers to process.
+                val (int): The integer value to remove from the list.
+
+            Returns:
+                int: The number of elements remaining in the list after removal of `val`.
+                    The list `nums` is modified in-place, 
+                    with the first `k` elements containing the valid values.
+
+        """
+        
+        return [x for x in nums if x!= val]
+
+#  Find the Index of the First Occurrence in a String : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+
+    def strStr(self,haystack:str, needle:str)->int:
+            """
+            Finds the index of the first occurrence of 'needle' in 'haystack'. 
+            Returns -1 if 'needle' is not found.
+
+            Args:
+                haystack (str): The string to search within.
+                needle (str): The substring to find.
+
+            Returns:
+                int: The index of the first occurrence of 'needle' in 'haystack', or -1 if not found.
+            """
+            if needle =="":
+                return 0
+            needle_lenght = len(needle)
+            haystack_lenght = len(haystack)
+            for i in range(haystack_lenght - needle_lenght + 1):
+                
+                if haystack[i:i+needle_lenght] == needle:
+                    return i
+            return -1
+            
 
            
             
