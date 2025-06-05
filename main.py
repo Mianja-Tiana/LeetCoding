@@ -68,8 +68,15 @@ if __name__ == "__main__":
     print(leet_obj.removeElement([0,1,2,2,3,0,4,2],2))
     print (" ")
 
-    print ("----------- . Find the Index of the First Occurrence in a String solution ----------")
+    print ("----------- Find the Index of the First Occurrence in a String solution ----------")
     print (" ")
     print(leet_obj.strStr("sadbutsad" ,"sad"))  
     print(leet_obj.strStr("leetcode","leeto"))
+    print (" ")
+
+    print ("----------- Search Insert Position  solution ----------")
+    print (" ")
+    print(leet_obj.searchInsert([1,3,5,6],5))  
+    print(leet_obj.searchInsert([1,3,5,6],2))
+    print(leet_obj.searchInsert([1,3,5,6],7))
     print (" ")

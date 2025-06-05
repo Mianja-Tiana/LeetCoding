@@ -298,7 +298,32 @@ class LeetCode:
                 if haystack[i:i+needle_lenght] == needle:
                     return i
             return -1
+    
+# Search Insert Position : https://leetcode.com/problems/search-insert-position/description/
             
+    def searchInsert(self, nums, target):
+        """
+        Given a sorted array of distinct integers and a target value,
+        return the index if the target is found; otherwise, return the index
+        where it should be inserted to maintain the sorted order.
 
+        Args:
+            nums (List[int]): A sorted list of distinct integers.
+            target (int): The value to search for in the list.
+
+        Returns:
+            int: The index of the target if found, or the index where it should
+                 be inserted to keep the list sorted.
+        """
+        left , right = 0 , len(nums)-1
+        while left<= right:
+            mid = (left+right)//2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid]<target:
+                left = mid+1
+            else:
+                right = mid -1
+        return left
            
             
