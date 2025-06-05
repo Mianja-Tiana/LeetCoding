@@ -80,3 +80,10 @@ if __name__ == "__main__":
     print(leet_obj.searchInsert([1,3,5,6],2))
     print(leet_obj.searchInsert([1,3,5,6],7))
     print (" ")
+
+    print ("----------- Length of Last Word solution ----------")
+    print (" ")
+    print(leet_obj.lengthOfLastWord("Hello World"))  
+    print(leet_obj.lengthOfLastWord("   fly me   to   the moon  "))
+    print(leet_obj.lengthOfLastWord("luffy is still joyboy"))
+    print (" ")
