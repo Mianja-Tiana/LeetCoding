@@ -301,7 +301,7 @@ class LeetCode:
     
 # Search Insert Position : https://leetcode.com/problems/search-insert-position/description/
             
-    def searchInsert(self, nums, target):
+    def searchInsert(self, nums:list[int], target:int) -> int:
         """
         Given a sorted array of distinct integers and a target value,
         return the index if the target is found; otherwise, return the index
@@ -325,5 +325,25 @@ class LeetCode:
             else:
                 right = mid -1
         return left
+    
+#  Length of Last Word : https://leetcode.com/problems/length-of-last-word/description/
+
+    def lengthOfLastWord(self, s):
+        """
+            Given a string `s` that consists of words and spaces, 
+            this function returns the length of the last word in the string.
+            A word is defined as the longest sequence of non-space characters.
+
+        Args:
+            s (str): A string containing words separated by spaces.
+
+        Returns:
+            int: The length of the last word in the string.
+        """
+
+        words = s.split()
+        for i, word in enumerate (words):
+            if i == len(words)-1:
+                return len(word)
            
             
