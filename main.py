@@ -87,3 +87,10 @@ if __name__ == "__main__":
     print(leet_obj.lengthOfLastWord("   fly me   to   the moon  "))
     print(leet_obj.lengthOfLastWord("luffy is still joyboy"))
     print (" ")
+
+    print ("----------- Plus One solution ----------")
+    print (" ")
+    print(leet_obj.plusOne([1,2,3]) )
+    print(leet_obj.plusOne([4,3,2,1]))
+    print(leet_obj.plusOne([9]))
+    print (" ")

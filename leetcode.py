@@ -328,7 +328,7 @@ class LeetCode:
     
 #  Length of Last Word : https://leetcode.com/problems/length-of-last-word/description/
 
-    def lengthOfLastWord(self, s):
+    def lengthOfLastWord(self, s:str) -> int:
         """
             Given a string `s` that consists of words and spaces, 
             this function returns the length of the last word in the string.
@@ -345,5 +345,27 @@ class LeetCode:
         for i, word in enumerate (words):
             if i == len(words)-1:
                 return len(word)
+            
+# Plus One :  https://leetcode.com/problems/plus-one/description/        
+    def plusOne(self, digits:list[int])->list[int]:
+            """
+            Function to increment a large integer represented as an array of digits.
+
+            Args:
+                digits (List[int]): An array representing a large integer, 
+                where each element is a digit (0–9).
+
+                Return:
+                    List[int]: A new array representing the original integer incremented by 1.
+
+            """
+
+            n = len(digits)
+            for i in range(n-1,-1,-1):
+                if digits[i]<9 :
+                    digits[i] +=1
+                    return digits
+                digits[i] = 0
+            return [1]+[0]*n
            
             
