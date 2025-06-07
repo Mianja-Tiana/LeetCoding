@@ -399,5 +399,34 @@ class LeetCode:
 
         return result
 
-           
-            
+#Sqrt(x) :https://leetcode.com/problems/sqrtx/description/
+          
+    def mySqrt(self, x:int)->int:
+        """
+        Function to compute the integer square root of a non-negative integer x, 
+        rounded down to the nearest whole number.
+
+        Args:
+            x (int): A non-negative integer whose square root is to be computed.
+
+        Returns:
+            int: The square root of x, rounded down to the nearest integer. 
+            The result is also non-negative.
+
+        """
+        if x<2 :
+            return x
+        left , right =0,x
+        while left <= right:
+            mid = (left + right)//2
+            square = mid * mid
+
+            if square == x:
+                return mid
+            elif square < x:
+                left = mid + 1
+            else:
+                right = mid -1
+        return right
+
+       

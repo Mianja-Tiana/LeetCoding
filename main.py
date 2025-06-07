@@ -101,3 +101,10 @@ if __name__ == "__main__":
     print(leet_obj.addBinary("1010", "1011"))
    
     print (" ")
+
+    print ("-----------Sqrt(x) solution ----------")
+    print (" ")
+    print(leet_obj.mySqrt(4) )
+    print(leet_obj.mySqrt(8))
+   
+    print (" ")
