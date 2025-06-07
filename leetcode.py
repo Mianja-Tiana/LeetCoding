@@ -367,5 +367,66 @@ class LeetCode:
                     return digits
                 digits[i] = 0
             return [1]+[0]*n
-           
-            
+    
+#Add Binary :https://leetcode.com/problems/add-binary/description/
+    def addBinary(self, a:str, b:str) ->str:
+        """
+        Adds two binary strings and returns their sum as a binary string.
+
+        Args:
+            a (str): A binary string 
+            b (str): A binary string 
+
+        Returns:
+            str: The binary sum of the two input strings.
+        """
+        
+        result = ""
+        carry = 0
+
+        i, j = len(a) - 1, len(b) - 1
+
+        while i >= 0 or j >= 0 or carry:
+            digit_a = int(a[i]) if i >= 0 else 0
+            digit_b = int(b[j]) if j >= 0 else 0
+
+            total = digit_a + digit_b + carry
+            carry = total // 2
+            result = str(total % 2) + result
+
+            i -= 1
+            j -= 1
+
+        return result
+
+#Sqrt(x) :https://leetcode.com/problems/sqrtx/description/
+          
+    def mySqrt(self, x:int)->int:
+        """
+        Function to compute the integer square root of a non-negative integer x, 
+        rounded down to the nearest whole number.
+
+        Args:
+            x (int): A non-negative integer whose square root is to be computed.
+
+        Returns:
+            int: The square root of x, rounded down to the nearest integer. 
+            The result is also non-negative.
+
+        """
+        if x<2 :
+            return x
+        left , right =0,x
+        while left <= right:
+            mid = (left + right)//2
+            square = mid * mid
+
+            if square == x:
+                return mid
+            elif square < x:
+                left = mid + 1
+            else:
+                right = mid -1
+        return right
+
+       

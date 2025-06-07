@@ -94,3 +94,17 @@ if __name__ == "__main__":
     print(leet_obj.plusOne([4,3,2,1]))
     print(leet_obj.plusOne([9]))
     print (" ")
+
+    print ("-----------Add Binary solution ----------")
+    print (" ")
+    print(leet_obj.addBinary("11" ,"1") )
+    print(leet_obj.addBinary("1010", "1011"))
+   
+    print (" ")
+
+    print ("-----------Sqrt(x) solution ----------")
+    print (" ")
+    print(leet_obj.mySqrt(4) )
+    print(leet_obj.mySqrt(8))
+   
+    print (" ")
