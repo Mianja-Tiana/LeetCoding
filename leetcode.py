@@ -428,5 +428,28 @@ class LeetCode:
             else:
                 right = mid -1
         return right
+    
+#Climbing Stairs :https://leetcode.com/problems/climbing-stairs/description/
+
+    def climbStairs(self, n:int)->int:
+        """
+        Calculates the number of distinct ways to climb a staircase with n steps,
+        where at each move you can climb either 1 step or 2 steps.
+
+        Args:
+            n(int): The total number of steps in the staircase.
+        
+
+        Returns:
+            int : The total number of distinct ways to climb to the top of the staircase.
+        
+        """
+        if n<= 2:
+            return n 
+        a , b = 1,2
+        for i in range(3,n+1):
+            a,b = b, a+b
+        return b
+
 
        

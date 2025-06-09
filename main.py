@@ -108,3 +108,11 @@ if __name__ == "__main__":
     print(leet_obj.mySqrt(8))
    
     print (" ")
+
+    print ("-----------Climbing Stairs solution ----------")
+    print (" ")
+    print(leet_obj.climbStairs(2) )
+    print(leet_obj.climbStairs(3))
+   
+    print (" ")
+
