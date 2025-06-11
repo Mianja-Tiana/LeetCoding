@@ -450,6 +450,30 @@ class LeetCode:
         for i in range(3,n+1):
             a,b = b, a+b
         return b
+    
+#Remove Duplicates from Sorted List :https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
+
+    def deleteDuplicates(self, head):
+        """
+            Removes duplicates from a sorted singly linked list.
+
+            Args:
+                head (ListNode): The head of the sorted linked list.
+
+            Returns:
+                ListNode: The head of the updated linked list with duplicates removed.
+
+        """
+       
+        head= ListNode.from_list(head)
+        current = head 
+        while current and current.next :
+            if current.val == current.next.val:
+                current.next = current.next.next 
+            else:
+                current = current.next
+        return head
+    
 
 
        

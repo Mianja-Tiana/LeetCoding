@@ -116,3 +116,9 @@ if __name__ == "__main__":
    
     print (" ")
 
+    print ("----------- Remove Duplicates from Sorted List solution ----------")
+    print (" ")
+    print(leet_obj.deleteDuplicates([1,1,2]) )
+    print(leet_obj.deleteDuplicates([1,1,2,3,3]))
+   
+    print (" ")
