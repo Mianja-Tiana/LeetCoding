@@ -453,7 +453,7 @@ class LeetCode:
     
 #Remove Duplicates from Sorted List :https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 
-    def deleteDuplicates(self, head):
+    def deleteDuplicates(self, head:list[int])->list[int]:
         """
             Removes duplicates from a sorted singly linked list.
 
@@ -474,6 +474,44 @@ class LeetCode:
                 current = current.next
         return head
     
+
+ #Merge Sorted Array:https://leetcode.com/problems/merge-sorted-array/description/
+
+    def merge(self, nums1:list[int], m:int, nums2:list[int], n:int)->list[int]:
+        """
+            Merge nums2 into nums1 in-place, sorted in non-decreasing order.
+            
+            Args:
+                nums1 (List[int]): First array with size m+n (first m are valid, last n are zeros)
+                m (int): Number of valid elements in nums1
+                nums2 (List[int]): Second sorted array with n elements
+                n (int): Number of elements in nums2
+            
+            Returns:
+                None: nums1 is modified in-place to be the merged sorted array.
+        """
+        # Pointeurs partant de la fin des parties valides
+        i = m - 1  # dernier élément valide dans nums1
+        j = n - 1  # dernier élément de nums2
+        k = m + n - 1  # dernier index de nums1
+
+        # Fusion à partir de la fin
+        while i >= 0 and j >= 0:
+            if nums1[i] > nums2[j]:
+                nums1[k] = nums1[i]
+                i -= 1
+            else:
+                nums1[k] = nums2[j]
+                j -= 1
+            k -= 1
+
+        # S'il reste des éléments dans nums2 (inutile de faire pour nums1 car déjà en place)
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
+        return nums1 
+
 
 
        
