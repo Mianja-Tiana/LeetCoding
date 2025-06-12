@@ -122,3 +122,10 @@ if __name__ == "__main__":
     print(leet_obj.deleteDuplicates([1,1,2,3,3]))
    
     print (" ")
+
+    print ("----------- Merge Sorted Array solution ----------")
+    print (" ")
+    print(leet_obj.merge([1,2,3,0,0,0],3,[2,5,6],3) )
+    print(leet_obj.merge([1], 1,[], 0))
+   
+    print (" ")
