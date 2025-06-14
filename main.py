@@ -129,3 +129,10 @@ if __name__ == "__main__":
     print(leet_obj.merge([1], 1,[], 0))
    
     print (" ")
+
+    print ("----------- Binary Tree Inorder Traversal solution ----------")
+    print (" ")
+    print(leet_obj.inorderTraversal([1,None,2,None,None,3]) )
+    print(leet_obj.inorderTraversal([1,2,3,4,5,None,8,None,None,6,7,None,None,9]))
+   
+    print (" ")

@@ -1,13 +1,13 @@
 """
 """
-
+from collections import deque
 
 class ListNode(object):
      
-    def __init__(self, val= 0, next=None):
+    def __init__(self, val= 0, next=None,):
          self.val = val
          self.next = next
-
+        
     @staticmethod
     def from_list(input_list):
         if len(input_list)==0:
@@ -32,6 +32,7 @@ class ListNode(object):
         return output
 
 
+   
 class LeetCode:
 
 #Palindrome Number : https://leetcode.com/problems/palindrome-number/description/
@@ -490,12 +491,12 @@ class LeetCode:
             Returns:
                 None: nums1 is modified in-place to be the merged sorted array.
         """
-        # Pointeurs partant de la fin des parties valides
-        i = m - 1  # dernier élément valide dans nums1
-        j = n - 1  # dernier élément de nums2
-        k = m + n - 1  # dernier index de nums1
+        
+        i = m - 1 
+        j = n - 1  
+        k = m + n - 1  
 
-        # Fusion à partir de la fin
+        
         while i >= 0 and j >= 0:
             if nums1[i] > nums2[j]:
                 nums1[k] = nums1[i]
@@ -505,13 +506,36 @@ class LeetCode:
                 j -= 1
             k -= 1
 
-        # S'il reste des éléments dans nums2 (inutile de faire pour nums1 car déjà en place)
+       
         while j >= 0:
             nums1[k] = nums2[j]
             j -= 1
             k -= 1
         return nums1 
+    
+#Binary Tree Inorder Traversal:https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+    def recinorderTraversal(self,i:int,tree:list[int],result:list[int]):
+        if i>= (len(tree)):
+            return
+        if tree[i] is None :
+            return 
+        
+        self.recinorderTraversal((2*i)+1,tree,result)
+        result.append(tree[i])
+        self.recinorderTraversal((2*i)+2 ,tree , result)
 
 
+    def inorderTraversal(self, root):
+        """
+        Converts a list of values into a binary tree in level-order (breadth-first).
+        
+        Args:
+            values (List): A list of values where None represents a missing node.
 
-       
+        Returns:
+            TreeNode: The root of the constructed binary tree.
+        
+        """
+        result =[]
+        self.recinorderTraversal(0,root,result)
+        return result
