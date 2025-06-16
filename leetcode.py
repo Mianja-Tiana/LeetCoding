@@ -31,7 +31,11 @@ class ListNode(object):
         output += ']'
         return output
 
-
+class TreeNode(object):
+ def __init__(self, val=0, left=None, right=None):
+    self.val = val
+    self.left = left
+    self.right = right
    
 class LeetCode:
 
@@ -514,7 +518,21 @@ class LeetCode:
         return nums1 
     
 #Binary Tree Inorder Traversal:https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+
     def recinorderTraversal(self,i:int,tree:list[int],result:list[int]):
+        """
+        Perform an inorder traversal on a binary tree represented as a list.
+
+        Args:
+            i (int): The current index in the tree list corresponding to the node.
+            tree (list[int]): The binary tree represented as a list (array).
+                            Each node at index i has its left child at 2*i + 1 and right child at 2*i + 2.
+                            Nodes that are missing should be represented with None.
+            result (list[int]): A list to collect the values in inorder traversal order.
+
+        Returns:
+            None: The function modifies the result list in place by appending visited node values in inorder sequence.
+        """
         if i>= (len(tree)):
             return
         if tree[i] is None :
@@ -525,7 +543,7 @@ class LeetCode:
         self.recinorderTraversal((2*i)+2 ,tree , result)
 
 
-    def inorderTraversal(self, root):
+    def inorderTraversal(self, root:list[int]):
         """
         Converts a list of values into a binary tree in level-order (breadth-first).
         
@@ -539,3 +557,30 @@ class LeetCode:
         result =[]
         self.recinorderTraversal(0,root,result)
         return result
+    
+
+    
+    def isSameTree(self,treep,treeq , p=0, q=0):
+        """
+        Determines whether two binary trees are the same.
+
+        Args:
+            p (TreeNode): Root node of the first binary tree.
+            q (TreeNode): Root node of the second binary tree.
+
+        Returns:
+            bool: True if the trees are structurally identical and have the same node values, False otherwise.
+        """
+        if p >= len(treep) and q >= len(treeq):
+            return True
+        if p>=len(treep) and q<len(treeq):
+            return False
+        if q>=len(treeq) and p<len(treep):
+            return False
+        if not treep[p] and not treeq[q]:
+            return True
+
+        if not treep[p] or not treeq[q] or treep[p] != treeq[q]:
+            return False
+
+        return self.isSameTree(treep,treeq,(2*p)+1 , (2*q)+1 ) and self.isSameTree(treep,treeq,(2*p)+2 , (2*q)+2 )
