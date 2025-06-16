@@ -136,3 +136,10 @@ if __name__ == "__main__":
     print(leet_obj.inorderTraversal([1,2,3,4,5,None,8,None,None,6,7,None,None,9]))
    
     print (" ")
+
+    print ("----------- Same Tree solution ----------")
+    print (" ")
+    print(leet_obj.isSameTree([1,2,3],[1,2,3]) )
+    print(leet_obj.isSameTree([1,2], [1,None,2]))
+    print(leet_obj.isSameTree([1,2,1], [1,1,2]))
+    print (" ")
