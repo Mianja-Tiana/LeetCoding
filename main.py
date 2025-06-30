@@ -143,3 +143,10 @@ if __name__ == "__main__":
     print(leet_obj.isSameTree([1,2], [1,None,2]))
     print(leet_obj.isSameTree([1,2,1], [1,1,2]))
     print (" ")
+
+    print ("----------- Symmetric Tree solution ----------")
+    print (" ")
+    print(leet_obj.isSymmetric([1,2,2,3,4,4,3]) )
+    print(leet_obj.isSymmetric([1,2,2,None,3,None,3]))
+   
+    print (" ")
