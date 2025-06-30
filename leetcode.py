@@ -559,8 +559,9 @@ class LeetCode:
         return result
     
 
-    
-    def isSameTree(self,treep,treeq , p=0, q=0):
+#Same Tree: https://leetcode.com/problems/same-tree/description/
+
+    def isSameTree(self,treep:list[int],treeq:list[int] , p:int=0, q:int=0)->bool:
         """
         Determines whether two binary trees are the same.
 
@@ -584,3 +585,40 @@ class LeetCode:
             return False
 
         return self.isSameTree(treep,treeq,(2*p)+1 , (2*q)+1 ) and self.isSameTree(treep,treeq,(2*p)+2 , (2*q)+2 )
+
+# Symmetric Tree :https://leetcode.com/problems/symmetric-tree/description/
+
+    def isSymmetric(self, tree:list[int])->bool:
+        """
+        Determines whether a binary tree represented as a list is symmetric.
+
+        Arguments:
+        - tree (List[Optional[int]]): level-order representation of the binary tree
+
+        Returns:
+        - bool: True if the tree is symmetric, False otherwise
+        """
+        return self.isMirror(tree, 1, 2)  
+
+    def isMirror(self, tree:list[int], i:int, j:int):
+        """
+            Helper recursive function that checks if two subtrees are mirror images of each other.
+
+            Arguments:
+            - tree (List[Optional[int]]): list representing the binary tree
+            - i (int): index of the first subtree root
+            - j (int): index of the second subtree root
+
+            Returns:
+            - bool: True if the subtrees rooted at indices i and j are mirrors, False otherwise
+            """
+        if i >= len(tree) and j >= len(tree):
+            return True
+        if i >= len(tree) or j >= len(tree):
+            return False
+        if tree[i] is None and tree[j] is None:
+            return True
+        if tree[i] is None or tree[j] is None or tree[i] != tree[j]:
+            return False
+        return self.isMirror(tree, 2*i + 1, 2*j + 2) and \
+               self.isMirror(tree, 2*i + 2, 2*j + 1)
