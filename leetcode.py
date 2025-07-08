@@ -622,3 +622,44 @@ class LeetCode:
             return False
         return self.isMirror(tree, 2*i + 1, 2*j + 2) and \
                self.isMirror(tree, 2*i + 2, 2*j + 1)
+    
+
+# Maximum Depth of Binary Tree:https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+
+    def maxDepth(self, tree_list:list[int]):
+
+        """
+        Computes the maximum depth of a binary tree represented as a list.
+
+        Arguments:
+        - tree_list (List[Optional[int]]): List representation of a binary tree,
+          where None represents missing nodes.
+
+        Returns:
+        - int: The maximum depth of the binary tree.
+     """
+
+        def helper(i:int):
+            """
+            Helper recursive function that computes the maximum depth of a binary tree
+            represented as a list, starting from a given index.
+
+            Arguments:
+            - i (int): Index of the current node in the list representation of the tree.
+
+            Returns:
+            - int: Maximum depth of the subtree rooted at index i.
+
+            Notes:
+            - The binary tree is represented as a list (like a heap), where:
+                * Left child of node at index i is at index 2*i + 1
+                * Right child of node at index i is at index 2*i + 2
+            - None values represent missing nodes in the tree.
+            """
+            if i >= len(tree_list) or tree_list[i] is None:
+                return 0
+            left = helper(2 * i + 1)
+            right = helper(2 * i + 2)
+            return 1 + max(left, right)
+
+        return helper(0)

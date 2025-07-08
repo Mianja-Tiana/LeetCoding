@@ -150,3 +150,10 @@ if __name__ == "__main__":
     print(leet_obj.isSymmetric([1,2,2,None,3,None,3]))
    
     print (" ")
+
+    print ("-----------  Maximum Depth of Binary Tree solution ----------")
+    print (" ")
+    print(leet_obj.maxDepth([3,9,20,None,None,15,7] ))
+    print(leet_obj.maxDepth([1,None,2]))
+   
+    print (" ")
